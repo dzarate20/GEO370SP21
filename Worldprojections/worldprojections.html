@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projections</title>
+</head>
+<body>
+    <h1>In this project I learned how to display images in different projections</h1>
+    
+    <p style="color:rgb(37, 8, 54)">The Earth is an oblate spheroid. Its three-dimensional shape makes it difficult to translate into a two-dimensional flat surface. Over time, map makers have tried multiple projections to "flatten" the world that have been useful for different purposes, but each prjection has its trade offs. To create the different projections shown below, I used QGIS. In QGIS, I added the vector of the world map that was downloaded from Natural Earth. Then, I used the Indicatrix mapper plugin to display the longitudes and latitudes over the map, as well as the indicatrix circles that help us compare the distortions created by the different projections. Lastly, in the project properties I chose the projection I needed, such as the Pseudo-Mercator or the Aitoff.  </p>
+    
+    <h2 style="color:rgb(91, 44, 119)">WGS84 Projection</h2>
+    <h3>This projection does a good job at preserving the area of the countries and continents. Even though the indicatrix circles at the top and bottom have been distorted into ellipses (meaning that the shapes in the map are not perfectly preserved) the areas of the ellipses are equivalent to that of the circles. </h3>
+    <a href=".//maps/4326.png">
+    <img src=".//maps/4326.png" alt="WGS84" width='500px'>
+    </a>
+    <h2 style="color:rgb(91, 44, 119)">Aitoff Projection</h2>
+    <h3>This projection shows the Earth as an ellipse. It does not conserve area or shape, but it is equidistant. </h3>
+    <a href=".//maps/54043.png">
+    <img src=".//maps/54043.png" alt="Aitoff" width='500px'>
+    </a>
+    <h2 style="color:rgb(91, 44, 119)">Pseudo Mercator Projection</h2>
+    <h3>This projection is one of the most known and used around the world. It was used for navigation as direction, angles, as well as shapes are preserved. However, as we move toward the poles area is clearly distorted. </h3>
+    <a href=".//maps/3857.png">
+    <img src=".//maps/3857.png" alt="3857" width='500px'>
+    </a>
+    <h2 style="color:rgb(91, 44, 119)">Sphere Winkle I Projection</h2>
+    <h3>This projections does not conserve areas, shapes, distances, or directions. Similar to the Mercator projection the areas become increasingly distorted as we move toward the poles. </h3>
+    <a href=".//maps/53018.png">
+    <img src=".//maps/53018.png" alt="53018" width='500px'>
+    </a>
+    <h2 style="color:rgb(91, 44, 119)">World Cylindrical Equal Area Projection</h2>
+    <h3>As the name of this projection indicates, it is an equal-area projection. Comparing it to other projections, it appears to be vertically shrinked. We can notice that along the Equator, shape seems preserved, but it gets progressively distorted as we move toward the poles.</h3>
+    <a href=".//maps/54034.png">
+    <img src=".//maps/54034.png" alt="54034" width='500px'>
+    </a>
+    <h2 style="color:rgb(91, 44, 119)">World Equidistant Conic Projection</h2>
+    <h3>Once more, as the name of this projection indicates, it is equidistant. To preserve distances, other aspects such as area, directions, and angles are given up. </h3>
+    <a href=".//maps/54027.png">
+    <img src=".//maps/54027.png" alt="54027" width='500px'>
+    </a>
+    <h2 style="color:rgb(91, 44, 119)">North Pole Equidistant Projection</h2>
+    <h3>This is another example of an equidistant projection, and it preserves direction as well. Shape and area are somewhat conserved near the center, but increasingly distorted as we move outwards. </h3>
+    <a href=".//maps/102016.png">
+    <img src=".//maps/102016.png" alt="102016" width='500px'>
+    </a>
+    <h2 style="color:rgb(91, 44, 119)">Sphere Bonne Projection</h2>
+    <h3>This one is an equal-area projection. By looking at the indicatrix circles we can see that shape and distance are distorted, as well as direction.</h3>
+    <a href=".//maps/54024.png">
+    <img src=".//maps/54024.png" alt="54024" width='500px'>
+    </a>
+    <h2 style="color:rgb(91, 44, 119)">World Sinusoidal Projection</h2>
+    <h3>This projection is equal-area. Shape, distances, and directions are distorted, especially as we move outwards. </h3>
+    <a href=".//maps/54008.png">
+    <img src=".//maps/54008.png" alt="54008" width='500px'>
+    </a>
+    
+    <p></p>
+    <h2>Data used for this project</h2>
+    <a href="https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_0_countries.zip"> Download Natrual Earth 1:10m Cultural Vector </a>
+</body>
+</html>
