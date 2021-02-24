@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leaflet Preview</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
+  <style type="text/css">
+    body {
+       margin: 0;
+       padding: 0;
+    }
+    html, body, #map{
+       width: 100%;
+       height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+
+    var map = L.map('map').setView([41.88479320523592, -87.61966868362188], 14.0);
+
+    var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+    var chicago_tile = L.tileLayer('./tiles_IL/{z}/{x}/{y}.png', {
+      minZoom: 12,
+      maxZoom: 16,
+      tms: false,
+      attribution: 'USGS'
+    }).addTo(map);
+
+
+    var icon_park = L.icon({
+    iconUrl: 'https://cdn4.iconfinder.com/data/icons/landscape/600/landscape-nature-clouds-forest-environment-garden-park-512.png',
+    iconSize: [50, 50],
+    popupAnchor: [0,0]
+    });
+
+    var park = "Millenium Park<br/><img src='https://lh5.googleusercontent.com/p/AF1QipPkpAXUj58I7uwCn_TdlrKAaN9VxMQXL4RTuTkJ=w408-h306-k-no'width='100px'/>";
+
+    var mark1 = L.marker([41.8826716763179, -87.62294575207898], {icon: icon_park}).addTo(map)
+    .bindPopup(park)
+    // .openPopup();
+
+
+    var icon_tower = L.icon({
+    iconUrl: 'https://cdn1.iconfinder.com/data/icons/world-landmark-vol-1/512/37-chicago-sears-willis-tower-512.png',
+    iconSize: [50, 50],
+    popupAnchor: [0,0]
+    });
+
+    var tower = "Willis Tower<br/><img src='https://lh5.googleusercontent.com/p/AF1QipMLQVclp1YLhC2Mm3E4fydrGox7cV_VBD-7s6be=w408-h524-k-no'width='100px'/>";
+
+    var mark2 = L.marker([41.879408708785206, -87.63579127444673], {icon: icon_tower}).addTo(map)
+    .bindPopup(tower)
+    // .openPopup();
+      
+      
+    var icon_cafe = L.icon({
+    iconUrl: 'https://image.flaticon.com/icons/png/512/2290/2290654.png',
+    iconSize: [50, 50],
+    popupAnchor: [0,0]
+    });
+
+    var cafe = "Grand Lux Cafe<br/><img src='https://lh5.googleusercontent.com/p/AF1QipMJ0707GC4p5a418d0JqmRXecBFxiS1dsnduUoI=w426-h240-k-no'width='100px'/>";
+
+    var mark3 = L.marker([41.893174002286536, -87.62477775954201], {icon: icon_cafe}).addTo(map)
+    .bindPopup(cafe)
+    // .openPopup();
+
+
+    var icon_fountain = L.icon({
+    iconUrl: 'https://cdn4.iconfinder.com/data/icons/wedding-violet-series-vol-2/512/water-fountain-512.png',
+    iconSize: [50, 50],
+    popupAnchor: [0,0]
+    });
+
+    var fountain = "Buckingham Fountain<br/><img src='https://lh5.googleusercontent.com/p/AF1QipP-YEcGeLPzk9gynVYU9sWuZtiKLqlFMdgiO9bn=w426-h240-k-no'width='100px'/>";
+
+    var mark4 = L.marker([41.875426507639396, -87.61895532450566], {icon: icon_fountain}).addTo(map)
+    .bindPopup(fountain)
+    // .openPopup();
+
+    var tiles = {
+      "Open Street Map": osm,
+      "Chicago Photo": chicago_tile
+    }
+
+    var vectors = {
+      "Millenium Park": mark1,
+      "Willis Tower": mark2,
+      "Grand Lux Cafe": mark3,
+      "Buckingham Fountain": mark4
+    }
+    L.control.layers(tiles, vectors).addTo(map);
+
+  </script>
+</body>
+</html>
