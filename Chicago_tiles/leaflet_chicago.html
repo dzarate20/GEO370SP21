@@ -92,6 +92,19 @@
     .bindPopup(fountain)
     // .openPopup();
 
+
+    var icon_chango = L.icon({
+    iconUrl: 'https://i.pinimg.com/originals/94/86/16/9486166e44e3023bf4fdbd40848f7255.png',
+    iconSize: [50, 50],
+    popupAnchor: [0, 0]  
+    });
+
+    var chango = "Chango's Apartmen<br/><img src='https://lh5.googleusercontent.com/p/AF1QipPzhqUc3avnwzyP0HKQp7qGDaGtBuCuLICkTadE=w408-h306-k-no'width='100px'/>";
+
+    var mark5 = L.marker([41.87629366843451, -87.55940818083656], {icon: icon_chango}).addTo(map)
+    .bindPopup(chango)
+    //.openPopup();
+    
     var tiles = {
       "Open Street Map": osm,
       "Chicago Photo": chicago_tile
