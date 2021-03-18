@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 7</title>
+</head>
+<body data-new-gr-c-s-check-loaded="8.871.0" data-gr-ext-installed="">
+<h1>Homework 8: Census data ratios and categories</h1>
+<h2>Estimated household income in Illinois' counties to the state's average household income.</h2>
+<h3>This ratio shows the percentage of the state's average household income ($47,511) that each county earns.</h3>
+<p></p>
+<h2>Natural breaks</h2>
+<h4>Natural breaks categorizes the data into the most optimal intervals. This categorization is useful for this map because it shows us that the majority of counties make less than 50% of the state's average household income which is consistent with the data.</h4>
+<!-- Your map goes here -->
+<a href="./breaks_ratio.png">
+    <img src="./breaks_ratio.png" alt="Illinois choropleth natural breaks" width="500px">
+    </a>
+<p></p>
+<h2>Equal intervals</h2>
+<h4>As the name says it, the equal interval categorization splits the data into classes with equal intervals. By doing this with the data used for the map, which goes from 3% to 4151%, this categorization splits the data into five clases of intervals of approximately 830. In this case, the data only falls under two classes so it does not make a lot of sense to have five different classes.</h4>
+<!-- Your map goes here -->
+<a href="./intv_ratio.png">
+    <img src="./intv_ratio.png" alt="Illinois choropleth equal intervals" width="500px">
+    </a>
+<p></p>
+<h2>Quantile</h2>
+<h4>Quantile categorization assigns the same number of data values to each class. In the case of the Illinois map it assign around 20 counties to each of the five classes because it has 102 counties. This categorization is useful for linearly distributed data, which is not the case of the data from the counties of Illinois.</h4>
+<!-- Your map goes here -->
+<a href="./quantile_ratio.png">
+    <img src="./quantile_ratio.png" alt="Illinois choropleth quantile" width="500px">
+    </a>
+
+</body></html>
